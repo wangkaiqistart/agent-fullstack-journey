@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="410" viewBox="0 0 960 410" role="img" aria-labelledby="title desc">
+<title id="title">Model Adapter：统一接口，替换实现</title><desc id="desc">业务函数依赖统一接口，真实 API 适配器和测试替身各自实现该接口，返回统一结果。</desc>
+<rect width="960" height="410" fill="#fff"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#52657c"/></marker></defs>
+<g font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" fill="#183153">
+<text x="32" y="40" text-anchor="start" font-size="26" font-weight="700" fill="#183153">Model Adapter：统一接口，替换实现</text>
+<path d="M480 136V176" fill="none" stroke="#52657c" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M480 240V266H170V290" fill="none" stroke="#52657c" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M480 240V290" fill="none" stroke="#52657c" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M480 266H790V290" fill="none" stroke="#52657c" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="330" y="73" width="300" height="63" rx="12" fill="#eaf2ff" stroke="#c8d5e5"/><text x="480.0" y="107" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">Agent Loop / 业务函数</text>
+<rect x="330" y="176" width="300" height="64" rx="12" fill="#eaf2ff" stroke="#c8d5e5"/><text x="480.0" y="210" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">统一 ChatModel 接口</text>
+<rect x="30" y="290" width="280" height="78" rx="12" fill="#eaf2ff" stroke="#c8d5e5"/><text x="170.0" y="324" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">Chat Adapter</text><text x="170.0" y="356" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">转换 Chat 请求与响应</text>
+<rect x="340" y="290" width="280" height="78" rx="12" fill="#eaf2ff" stroke="#c8d5e5"/><text x="480.0" y="324" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">Responses Adapter</text><text x="480.0" y="356" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">转换 Responses 请求与响应</text>
+<rect x="650" y="290" width="280" height="78" rx="12" fill="#e9f7ee" stroke="#c8d5e5"/><text x="790.0" y="324" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">测试替身</text><text x="790.0" y="356" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">离线验证业务逻辑</text>
+<text x="480" y="398" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">所有实现返回统一 ModelResult；业务函数无需知道供应商字段。</text>
+</g></svg>

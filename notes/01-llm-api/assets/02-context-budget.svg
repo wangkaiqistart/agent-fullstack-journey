@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="310" viewBox="0 0 960 310" role="img" aria-labelledby="title desc">
+<title id="title">上下文预算：输入要给输出留位置</title><desc id="desc">所有数值为教学假设：输入6000加预留输出2000等于上下文容量8000 Token，尚未给消息封装留余量。</desc>
+<rect width="960" height="310" fill="#fff"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#52657c"/></marker></defs>
+<g font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" fill="#183153">
+<text x="32" y="40" text-anchor="start" font-size="26" font-weight="700" fill="#183153">上下文预算：输入要给输出留位置</text>
+<rect x="40" y="85" width="660" height="65" rx="5" fill="#eaf2ff" stroke="#c8d5e5"/>
+<rect x="700" y="85" width="220" height="65" rx="5" fill="#e9f7ee" stroke="#c8d5e5"/>
+<text x="370" y="124" text-anchor="middle" font-size="23" font-weight="700" fill="#183153">输入 6,000</text>
+<text x="810" y="124" text-anchor="middle" font-size="21" font-weight="700" fill="#183153">输出预留 2,000</text>
+<rect x="40" y="178" width="205" height="79" rx="12" fill="#f5f7fa" stroke="#c8d5e5"/><text x="142.5" y="212" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">系统指令</text><text x="142.5" y="244" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">500</text>
+<rect x="265" y="178" width="205" height="79" rx="12" fill="#f5f7fa" stroke="#c8d5e5"/><text x="367.5" y="212" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">用户任务</text><text x="367.5" y="244" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">1,000</text>
+<rect x="490" y="178" width="205" height="79" rx="12" fill="#f5f7fa" stroke="#c8d5e5"/><text x="592.5" y="212" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">历史消息</text><text x="592.5" y="244" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">3,000</text>
+<rect x="715" y="178" width="205" height="79" rx="12" fill="#f5f7fa" stroke="#c8d5e5"/><text x="817.5" y="212" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">工具结果</text><text x="817.5" y="244" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">1,500</text>
+<text x="480" y="291" text-anchor="middle" font-size="17" font-weight="400" fill="#9c3e23">教学假设：8,000 Token 已占满；真实请求还需额外余量。</text>
+</g></svg>

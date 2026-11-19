@@ -1,0 +1,7 @@
+# 此文件只列 Demo 直接使用的库；完整环境快照见根目录 requirements.txt。
+# OpenAI SDK：调用真实模型的 Chat Completions / Responses 接口。
+openai==3.51.0
+# 自动读取 .env 中的模型地址、密钥与模型名，不在代码中写死配置。
+python-dotenv==1.2.1
+# 修改计划的字段、类型及业务规则校验；版本与根目录快照一致。
+pydantic==2.14.3

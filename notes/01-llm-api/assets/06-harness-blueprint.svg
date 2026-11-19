@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="610" viewBox="0 0 1100 610" role="img" aria-labelledby="title desc">
+  <title id="title">Harness 模块与职责关系</title>
+  <desc id="desc">任务与上下文连接模型适配器和结构化校验；适配器连接循环决策；校验连接重试处理，并以反馈线连接决策；循环决策、有限重试和错误分类依次连接。用量与预算反馈至输入，并连接错误追踪。本图表示模块职责关系，不声明这些连线是严格执行顺序。</desc>
+  <rect width="1100" height="610" fill="white"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#52657c"/>
+    </marker>
+    <marker id="feedback" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#25845a"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="#52657c" stroke-width="2.2" marker-end="url(#arrow)">
+    <path d="M240 265L340 130"/>
+    <path d="M240 295L340 315"/>
+    <path d="M600 130H790"/>
+    <path d="M600 315H790"/>
+    <path d="M920 180V260"/>
+    <path d="M920 370V440"/>
+    <path d="M600 485H790"/>
+    <path d="M340 485L240 330" stroke-dasharray="7 5"/>
+  </g>
+  <path d="M600 280L790 160" fill="none" stroke="#25845a" stroke-width="2.2" stroke-dasharray="7 5" marker-end="url(#feedback)"/>
+  <g font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" text-anchor="middle">
+    <text x="30" y="40" text-anchor="start" font-size="26" font-weight="700" fill="#183153">Harness 模块与职责关系</text>
+    <text x="700" y="285" font-size="16" fill="#25845a">retry-with-feedback</text>
+
+    <rect x="40" y="230" width="200" height="100" rx="10" fill="#eaf2ff" stroke="#c8d5e5"/>
+    <text x="140" y="270" font-size="23" font-weight="700" fill="#183153">任务与上下文</text>
+    <text x="140" y="302" font-size="18" fill="#52657c">A</text>
+
+    <rect x="340" y="80" width="260" height="100" rx="10" fill="#183153"/>
+    <text x="470" y="114" font-size="23" font-weight="700" fill="white">Model Adapter</text>
+    <text x="470" y="142" font-size="17" fill="#e2ebfa">B · 可替换的运行时</text>
+    <text x="470" y="166" font-size="16" fill="#e2ebfa">ChatModel Protocol</text>
+
+    <rect x="340" y="260" width="260" height="110" rx="10" fill="#eaf2ff" stroke="#c8d5e5"/>
+    <text x="470" y="304" font-size="23" font-weight="700" fill="#183153">结构化校验</text>
+    <text x="470" y="338" font-size="17" fill="#52657c">C · Pydantic / 业务规则</text>
+
+    <rect x="340" y="440" width="260" height="90" rx="10" fill="white" stroke="#c8d5e5"/>
+    <text x="470" y="477" font-size="23" font-weight="700" fill="#183153">用量与预算</text>
+    <text x="470" y="509" font-size="17" fill="#52657c">token · cost · latency</text>
+
+    <rect x="790" y="80" width="260" height="100" rx="10" fill="#e9f7ee" stroke="#a9d8bc"/>
+    <text x="920" y="120" font-size="23" font-weight="700" fill="#205b3a">Loop 决策</text>
+    <text x="920" y="152" font-size="17" fill="#205b3a">D · edit / ask_user / finish</text>
+
+    <rect x="790" y="260" width="260" height="110" rx="10" fill="#fff0f1" stroke="#e8bbc0"/>
+    <text x="920" y="304" font-size="23" font-weight="700" fill="#9d2337">有限重试 / 终止</text>
+    <text x="920" y="338" font-size="17" fill="#9d2337">E · 退避 · 降级 · 终止</text>
+
+    <rect x="790" y="440" width="260" height="90" rx="10" fill="#fff1e8" stroke="#edc8ad"/>
+    <text x="920" y="477" font-size="23" font-weight="700" fill="#87431e">错误分类 + Trace</text>
+    <text x="920" y="509" font-size="17" fill="#87431e">F · 模型问题 vs 系统问题</text>
+
+    <text x="550" y="580" font-size="18" fill="#52657c">本图展示模块职责关系；实际执行时先校验，再决策。</text>
+  </g>
+</svg>

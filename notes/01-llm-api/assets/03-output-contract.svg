@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="330" viewBox="0 0 960 330" role="img" aria-labelledby="title desc">
+<title id="title">结构化输出：语法 → 结构 → 业务</title><desc id="desc">JSON保证可解析，Schema限制结构，本地业务规则检查跨字段要求、路径和权限。</desc>
+<rect width="960" height="330" fill="#fff"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#52657c"/></marker></defs>
+<g font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" fill="#183153">
+<text x="32" y="40" text-anchor="start" font-size="26" font-weight="700" fill="#183153">结构化输出：语法 → 结构 → 业务</text>
+<path d="M310 172H340" fill="none" stroke="#52657c" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M620 172H650" fill="none" stroke="#52657c" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="30" y="85" width="280" height="180" rx="12" fill="#eaf2ff" stroke="#c8d5e5"/><text x="170.0" y="119" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">1  JSON 语法</text><text x="170.0" y="151" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">能解析为数据</text><text x="170.0" y="178" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">例：括号与引号完整</text><text x="170.0" y="205" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">仍可能缺字段</text>
+<rect x="340" y="85" width="280" height="180" rx="12" fill="#eaf2ff" stroke="#c8d5e5"/><text x="480.0" y="119" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">2  Schema 约束</text><text x="480.0" y="151" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">字段 · 类型 · 枚举</text><text x="480.0" y="178" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">例：action 只能取约定值</text><text x="480.0" y="205" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">仍需检查业务语义</text>
+<rect x="650" y="85" width="280" height="180" rx="12" fill="#e9f7ee" stroke="#c8d5e5"/><text x="790.0" y="119" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">3  本地业务检查</text><text x="790.0" y="151" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">跨字段 · 资源 · 权限</text><text x="790.0" y="178" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">例：edit 必须有合法路径</text><text x="790.0" y="205" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">通过后仍需执行授权</text>
+<text x="480" y="303" text-anchor="middle" font-size="21" font-weight="700" fill="#183153">JSON 合法 ≠ 字段正确 ≠ 允许执行</text>
+</g></svg>

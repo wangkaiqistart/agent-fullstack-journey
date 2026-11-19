@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="590" viewBox="0 0 960 590" role="img" aria-labelledby="title desc">
+<title id="title">最小 Harness：先检查，再决策</title><desc id="desc">先检查，再决策。任务与上下文进入模型适配器，输出经过结构和业务校验再进入循环决策。调用或校验失败按分类有限重试或终止，重试回到模型调用。用量和Trace贯穿全程。</desc>
+<rect width="960" height="590" fill="#fff"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#52657c"/></marker></defs>
+<g font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" fill="#183153">
+<text x="32" y="40" text-anchor="start" font-size="26" font-weight="700" fill="#183153">最小 Harness：先检查，再决策</text>
+<path d="M270 132H350" fill="none" stroke="#52657c" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M480 175V220" fill="none" stroke="#52657c" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M480 310V355" fill="none" stroke="#52657c" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M610 132H900V310" fill="none" stroke="#52657c" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M610 265H820V310" fill="none" stroke="#52657c" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M690 364H650V195H550V175" fill="none" stroke="#52657c" stroke-width="2.2" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+<rect x="30" y="85" width="240" height="95" rx="12" fill="#eaf2ff" stroke="#c8d5e5"/><text x="150.0" y="119" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">任务与上下文</text><text x="150.0" y="151" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">组织消息 · 预留预算</text>
+<rect x="350" y="85" width="260" height="90" rx="12" fill="#eaf2ff" stroke="#c8d5e5"/><text x="480.0" y="119" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">Model Adapter</text><text x="480.0" y="151" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">发送模型请求</text>
+<rect x="350" y="220" width="260" height="90" rx="12" fill="#eaf2ff" stroke="#c8d5e5"/><text x="480.0" y="254" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">输出校验</text><text x="480.0" y="286" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">结束原因 · 结构 · 业务</text>
+<rect x="350" y="355" width="260" height="90" rx="12" fill="#e9f7ee" stroke="#c8d5e5"/><text x="480.0" y="389" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">Loop 决策</text><text x="480.0" y="421" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">edit / ask_user / finish</text>
+<rect x="690" y="310" width="240" height="110" rx="12" fill="#fff1e8" stroke="#c8d5e5"/><text x="810.0" y="344" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">失败处理</text><text x="810.0" y="376" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">分类 · 有限重试</text><text x="810.0" y="403" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">不可恢复则终止</text>
+<text x="811" y="113" text-anchor="middle" font-size="16" font-weight="400" fill="#183153">调用失败</text>
+<text x="790" y="252" text-anchor="middle" font-size="16" font-weight="400" fill="#183153">校验失败</text>
+<text x="672" y="203" text-anchor="middle" font-size="16" font-weight="400" fill="#183153">重试</text>
+<text x="480" y="487" text-anchor="middle" font-size="17" font-weight="400" fill="#9c3e23">通过的计划仍需执行授权</text>
+<rect x="30" y="520" width="900" height="46" rx="8" fill="#f5f7fa"/>
+<text x="480" y="550" text-anchor="middle" font-size="20" font-weight="400" fill="#183153">贯穿全程：状态 · 权限边界 · 用量与预算 · Trace</text>
+<path d="M820 420V466" fill="none" stroke="#52657c" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="820" y="493" text-anchor="middle" font-size="18" font-weight="400" fill="#183153">终止 / 澄清</text>
+</g></svg>

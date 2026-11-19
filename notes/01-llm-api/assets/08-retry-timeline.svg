@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="305" viewBox="0 0 960 305" role="img" aria-labelledby="title desc">
+<title id="title">补充：三次尝试，两次等待</title>
+<desc id="desc">根据 attempts=3 的有限重试逻辑绘制三次均失败的时间线。第一次失败等待0.5到0.7秒；第二次失败等待1.0到1.2秒；第三次失败直接抛出，不再等待。任意一次成功即返回，等待区间为公式计算而非实测。</desc>
+<rect width="960" height="305" fill="#ffffff"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#52657c"/></marker></defs>
+<text x="30" y="40" text-anchor="start" font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="26" font-weight="700" fill="#183153">attempts=3：最多3次调用，只等待2次</text>
+<rect x="30" y="90" width="220" height="100" rx="12" fill="#eaf2ff" stroke="#c8d5e5"/>
+<text x="140" y="128" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" font-weight="700" fill="#183153">第1次尝试</text>
+<text x="140" y="163" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" font-weight="400" fill="#183153">失败</text>
+<text x="140" y="219" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="18" font-weight="400" fill="#52657c">attempt = 0</text>
+<rect x="370" y="90" width="220" height="100" rx="12" fill="#eaf2ff" stroke="#c8d5e5"/>
+<text x="480" y="128" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" font-weight="700" fill="#183153">第2次尝试</text>
+<text x="480" y="163" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" font-weight="400" fill="#183153">失败</text>
+<text x="480" y="219" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="18" font-weight="400" fill="#52657c">attempt = 1</text>
+<rect x="710" y="90" width="220" height="100" rx="12" fill="#fff1e8" stroke="#c8d5e5"/>
+<text x="820" y="128" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="23" font-weight="700" fill="#183153">第3次尝试</text>
+<text x="820" y="163" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="20" font-weight="400" fill="#87431e">仍失败 → 立即终止</text>
+<text x="820" y="219" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="18" font-weight="400" fill="#52657c">attempt = 2</text>
+<path d="M250 140H370" fill="none" stroke="#52657c" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="310" y="115" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="18" font-weight="400" fill="#52657c">等待</text>
+<text x="310" y="177" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="19" font-weight="400" fill="#52657c">0.5–0.7s</text>
+<path d="M590 140H710" fill="none" stroke="#52657c" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="650" y="115" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="18" font-weight="400" fill="#52657c">等待</text>
+<text x="650" y="177" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="19" font-weight="400" fill="#52657c">1.0–1.2s</text>
+<text x="480" y="265" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="19" font-weight="400" fill="#52657c">仅示意三次均失败；任意一次成功立即返回。</text>
+<text x="480" y="291" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" font-size="17" font-weight="400" fill="#52657c">等待区间按退避公式计算；总截止时间需另行管理。</text>
+</svg>

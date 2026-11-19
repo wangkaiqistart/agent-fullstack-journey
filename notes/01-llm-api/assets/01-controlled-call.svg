@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="260" viewBox="0 0 960 260" role="img" aria-labelledby="title desc">
+<title id="title">受控输入 → 模型适配 → 输出校验</title><desc id="desc">输入包含指令、上下文和参数，模型提供候选结果，程序校验输出后再决定行动。</desc>
+<rect width="960" height="260" fill="#fff"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#52657c"/></marker></defs>
+<g font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" fill="#183153">
+<text x="32" y="40" text-anchor="start" font-size="26" font-weight="700" fill="#183153">受控输入 → 模型适配 → 输出校验</text>
+<path d="M300 142H350" fill="none" stroke="#52657c" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M610 142H660" fill="none" stroke="#52657c" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="30" y="85" width="270" height="115" rx="12" fill="#eaf2ff" stroke="#c8d5e5"/><text x="165.0" y="119" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">受控输入</text><text x="165.0" y="151" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">指令 · 上下文 · 参数</text>
+<rect x="350" y="85" width="260" height="115" rx="12" fill="#eaf2ff" stroke="#c8d5e5"/><text x="480.0" y="119" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">Model Adapter</text><text x="480.0" y="151" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">统一调用 · 候选结果</text>
+<rect x="660" y="85" width="270" height="115" rx="12" fill="#e9f7ee" stroke="#c8d5e5"/><text x="795.0" y="119" text-anchor="middle" font-size="22" font-weight="700" fill="#183153">输出校验</text><text x="795.0" y="151" text-anchor="middle" font-size="17" font-weight="400" fill="#183153">格式 · Schema · 业务规则</text>
+<text x="480" y="237" text-anchor="middle" font-size="19" font-weight="400" fill="#183153">Prompt 给要求，SDK 发请求，Harness 管运行。</text>
+</g></svg>

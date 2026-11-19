@@ -1,0 +1,45 @@
+# 操作系统与 IDE 的本地文件。
+.DS_Store
+.idea/
+.jbeval/
+
+# Python 虚拟环境：提交依赖清单，不提交安装后的库。
+.venv/
+
+# Python / 检查工具生成的缓存和覆盖率报告。
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# 本机密钥与环境配置；空密钥的配置模板可以提交。
+.env
+.env.*
+!.env.example
+
+# 本地运行日志与临时文件。
+*.log
+/tmp/
+/.cache/
+
+# 课程 PDF、视频、音频和整包附件保留在外部学习资料目录。
+# 自制的 SVG、教学 PNG 和 Markdown 笔记正常提交。
+*.pdf
+*.mp4
+*.m4v
+*.mov
+*.mkv
+*.avi
+*.mp3
+*.wav
+*.m4a
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
