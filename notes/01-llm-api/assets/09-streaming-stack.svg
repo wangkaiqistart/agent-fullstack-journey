@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" role="img" aria-labelledby="title desc">
+<title id="title">Streaming 分层：字节、SSE 帧与 Harness 事件</title>
+<desc id="desc">网络字节经过 SSE 帧解析，再转换为业务事件；模型 Adapter 停在协议边界，客户端只消费 Harness 事件。</desc>
+<rect width="1100" height="560" fill="#ffffff"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#52657c"/></marker></defs>
+<g font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" fill="#183153">
+<text x="32" y="42" font-size="28" font-weight="700">Streaming 的三层边界</text>
+<text x="32" y="76" font-size="17" fill="#52657c">chunk ≠ SSE event ≠ token；每层只处理自己的协议。</text>
+<path d="M276 230H360" stroke="#52657c" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M638 230H722" stroke="#52657c" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="32" y="130" width="244" height="200" rx="16" fill="#eef4ff" stroke="#c8d5e5" stroke-width="2"/>
+<text x="154" y="174" text-anchor="middle" font-size="24" font-weight="700">1. HTTP 字节</text>
+<text x="154" y="214" text-anchor="middle" font-size="18">TCP / proxy / buffer</text>
+<text x="154" y="252" text-anchor="middle" font-size="18">任意拆包、粘包</text>
+<text x="154" y="292" text-anchor="middle" font-size="17" fill="#52657c">TextDecoder + buffer</text>
+<rect x="360" y="130" width="278" height="200" rx="16" fill="#fff4e9" stroke="#edc8ad" stroke-width="2"/>
+<text x="499" y="174" text-anchor="middle" font-size="24" font-weight="700">2. SSE 帧</text>
+<text x="499" y="214" text-anchor="middle" font-size="18">id / event / data</text>
+<text x="499" y="252" text-anchor="middle" font-size="18">空行结束一帧</text>
+<text x="499" y="292" text-anchor="middle" font-size="17" fill="#87431e">heartbeat 不占业务 seq</text>
+<rect x="722" y="130" width="346" height="200" rx="16" fill="#e9f7ee" stroke="#a9d8bc" stroke-width="2"/>
+<text x="895" y="174" text-anchor="middle" font-size="24" font-weight="700">3. Harness Event</text>
+<text x="895" y="214" text-anchor="middle" font-size="18">run_id + seq + type</text>
+<text x="895" y="252" text-anchor="middle" font-size="18">排序、去重、重放、Trace</text>
+<text x="895" y="292" text-anchor="middle" font-size="17" fill="#205b3a">Client 只消费这一层</text>
+<rect x="32" y="390" width="1036" height="100" rx="16" fill="#183153"/>
+<text x="550" y="432" text-anchor="middle" font-size="23" font-weight="700" fill="#ffffff">Model Adapter → Event Store → SSE Gateway → Web / CLI / IDE</text>
+<text x="550" y="468" text-anchor="middle" font-size="17" fill="#e2ebfa">Loop 生产事实；Gateway 负责传输；客户端负责渲染与取消请求</text>
+</g></svg>

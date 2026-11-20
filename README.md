@@ -16,6 +16,11 @@
 | 笔记 | 内容与状态 |
 | --- | --- |
 | [从模型 API 到可控的 Agent Harness](notes/01-llm-api/01-从模型API到可控的Agent-Harness.md) | 按 9 个工程主题组织的独立文档，附完整示例及 8 张示意图（PNG 预览 + SVG 原图）；尚未评估掌握程度 |
+| [Streaming：让 Agent 执行过程可见、可停、可续](notes/01-llm-api/02-streaming.md) | 独立整理 Streaming、SSE、事件契约、取消与恢复；8 项离线测试通过，真实流式调用已验证 |
+| [Prompt Engineering：把提示词做成 Agent 的行为契约](notes/01-llm-api/03-prompt-engineering.md) | 独立整理 System Prompt、Few-shot、任务拆解、模板、防注入与版本回归；离线边界测试已补齐 |
+| [Structured Output：让 Agent 的输出可校验、可恢复、可执行](notes/01-llm-api/04-structured-output.md) | 独立整理 JSON Schema、Pydantic、三层校验、有限纠错与安全降级；协议测试已补齐 |
+| [LLM Gateway：把模型调用变成可治理的稳定边界](notes/01-llm-api/05-llm-gateway.md) | 独立整理协议隔离、Provider Adapter、模板、重试、Streaming 与 Trace；Gateway 测试已补齐 |
+| [阶段一：LLM 统一模型调用服务](notes/01-llm-api/06-stage-one-llm-gateway.md) | 将前面能力整合为 YAML 配置、OpenAI Compatible API、路由、fallback 和 SQLite 用量记录的阶段项目 |
 
 ## 代码示例入口
 
@@ -24,6 +29,11 @@
 | [模型 API 最小调用](demos/01-first-model-call/README.md) | Chat Completions / Responses 文本、工具闭环与图片理解，6 个脚本已通过真实模型调用；学习者实践待记录 |
 | [Agent 工程示例](demos/01-first-model-call/README.md#agent-工程示例) | 参数、结构化输出、路径校验、有限重试、真实 Adapter 与最小规划 Agent；验证范围见运行说明 |
 | [上下文预算实验](demos/01-first-model-call/README.md#上下文预算先裁剪再调用) | 按字符裁剪历史，100 / 40 字符两组真实调用已验证信息保留与丢失；学习者实践待记录 |
+| [Streaming Demo](demos/02-streaming/README.md) | 真实模型流式调用、SSE 编解码、Run Store、FastAPI Gateway、取消与 Checkpoint；离线边界测试通过 |
+| [Prompt Engineering Demo](demos/03-prompt-engineering/README.md) | 真实 Prompt 契约、三段式拆解、注入边界、版本注册表和最小回归 |
+| [Structured Output Demo](demos/04-structured-output/README.md) | Chat / Responses 原生 Schema、Pydantic 校验、有限纠错、缓存降级和失败边界 |
+| [LLM Gateway Demo](demos/05-llm-gateway/README.md) | FastAPI `/chat`、`/stream`、`/trace`，Provider Adapter、模板、重试/fallback 和观测 |
+| [阶段一 Gateway 服务](projects/01-llm-gateway/README.md) | OpenAI Compatible `/v1/chat/completions`、YAML Provider 路由、健康检查和 SQLite Usage |
 
 ## 本地 Python 环境
 
@@ -63,8 +73,10 @@ agent-fullstack-journey/
 ├── demos/                    # 单个知识点的最小实验
 │   ├── 01-first-model-call/
 │   ├── 02-streaming/
-│   └── 03-structured-output/
+│   ├── 03-prompt-engineering/
+│   └── 04-structured-output/
 ├── projects/                 # 综合运用多个知识点的阶段项目
+│   └── 01-llm-gateway/
 ├── templates/                # 从实际使用中沉淀的笔记与 Demo 模板
 └── .gitignore                # 在引入代码、环境文件前配置
 ```
@@ -103,6 +115,18 @@ agent-fullstack-journey/
 ```
 
 重点记录理解变化和实验结果，不以抄全课件为目标。课程观点、自己的推断和实际验证结果应明确区分。
+
+### 课程文档整理风格
+
+后续课程资料统一整理为独立技术文档，遵循以下标准：
+
+- 保留原资料的核心概念、因果关系、关键示例和边界，采用易读的中文重组，不做逐句直译。
+- 按“问题 → 概念 → 协议 / 架构 → 最小代码 → 实验 → 限制 → 练习”组织内容。
+- 用表格、对比表、流程图和状态图表达关系，减少重复铺垫和空泛总结。
+- 不在正文依赖 PDF 页码、原页编号或课件索引；文档脱离原资料也应能独立阅读。
+- 真实模型 / API 验证、离线测试、个人推断和未执行项分开记录，代码示例带简明注释。
+- 重要架构图和状态图提供 SVG 原图与 PNG 预览，并在正文说明读图重点。
+- 每篇资料都配套可运行示例，完成代码、测试、链接、图片和验证记录的闭环。
 
 ### Demo 要求
 

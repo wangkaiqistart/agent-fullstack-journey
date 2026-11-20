@@ -1,0 +1,29 @@
+providers:
+  - name: primary
+    base_url: ${AGENTOS_LLM_BASE_URL}
+    api_key_env: AGENTOS_LLM_API_KEY
+    model: ${AGENTOS_LLM_MODEL}
+    priority: 10
+    capabilities: [chat, streaming, structured_output]
+  # 配置 AGENTOS_ALT_LLM_* 后再启用备用 Provider。
+  - name: backup
+    base_url: ${AGENTOS_ALT_LLM_BASE_URL}
+    api_key_env: AGENTOS_ALT_LLM_API_KEY
+    model: ${AGENTOS_ALT_LLM_MODEL}
+    priority: 20
+    capabilities: [chat, streaming]
+
+models:
+  default:
+    providers: [primary, backup]
+    required_capabilities: [chat]
+
+retry:
+  max_attempts: 2
+  retryable_statuses: [408, 429, 500, 502, 503, 504]
+
+pricing:
+  # 示例不猜测价格；按实际供应商价目表填写每百万 Token 价格。
+  primary:
+    input_per_million: null
+    output_per_million: null

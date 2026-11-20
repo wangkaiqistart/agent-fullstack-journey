@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620" role="img" aria-labelledby="title desc">
+<title id="title">取消、重连与恢复的边界</title>
+<desc id="desc">订阅断开只影响客户端读取；显式取消通过服务端状态机传播；断线恢复重放事件，Worker 崩溃从检查点继续。</desc>
+<rect width="1100" height="620" fill="#ffffff"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#52657c"/></marker></defs>
+<g font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" fill="#183153">
+<text x="32" y="42" font-size="28" font-weight="700">取消、重连与恢复不是同一个动作</text>
+<rect x="32" y="92" width="300" height="120" rx="14" fill="#eef4ff" stroke="#c8d5e5" stroke-width="2"/>
+<text x="182" y="136" text-anchor="middle" font-size="23" font-weight="700">订阅连接</text>
+<text x="182" y="174" text-anchor="middle" font-size="17">GET /runs/{id}/events</text>
+<path d="M332 152H420" stroke="#52657c" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="420" y="92" width="300" height="120" rx="14" fill="#fff4e9" stroke="#edc8ad" stroke-width="2"/>
+<text x="570" y="136" text-anchor="middle" font-size="23" font-weight="700">Run 状态机</text>
+<text x="570" y="174" text-anchor="middle" font-size="17">running → cancelling → cancelled</text>
+<path d="M720 152H808" stroke="#52657c" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="808" y="92" width="260" height="120" rx="14" fill="#e9f7ee" stroke="#a9d8bc" stroke-width="2"/>
+<text x="938" y="136" text-anchor="middle" font-size="23" font-weight="700">Loop / Tool</text>
+<text x="938" y="174" text-anchor="middle" font-size="17">检查取消信号并清理</text>
+<text x="32" y="270" font-size="22" font-weight="700">客户端断线</text>
+<text x="32" y="306" font-size="18">Last-Event-ID → 服务端按 seq 重放</text>
+<text x="32" y="342" font-size="18" fill="#205b3a">恢复的是 Harness Event，不重新调用模型</text>
+<text x="580" y="270" font-size="22" font-weight="700">Worker 崩溃</text>
+<text x="580" y="306" font-size="18">读取 Checkpoint → 从下一步继续</text>
+<text x="580" y="342" font-size="18" fill="#9d2337">涉及外部副作用时进入 unknown，禁止盲目重放</text>
+<rect x="32" y="418" width="1036" height="126" rx="16" fill="#183153"/>
+<text x="550" y="464" text-anchor="middle" font-size="24" font-weight="700" fill="#ffffff">已产生业务事件后，不要简单重试模型</text>
+<text x="550" y="504" text-anchor="middle" font-size="18" fill="#e2ebfa">Transport Resume = 重放事件 · Model Retry = 尚无事实时重新生成 · Task Resume = 从检查点续跑</text>
+</g></svg>

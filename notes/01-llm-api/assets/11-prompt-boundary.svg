@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" role="img" aria-labelledby="title desc">
+<title id="title">Prompt 的指令、数据与 Harness 边界</title>
+<desc id="desc">稳定规则位于 System Prompt，用户与外部文档位于不可信数据区域，高风险动作必须由 Harness 程序拦截。</desc>
+<rect width="1100" height="560" fill="#ffffff"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#52657c"/></marker></defs>
+<g font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif" fill="#183153">
+<text x="32" y="42" font-size="28" font-weight="700">Prompt 的信任边界</text>
+<text x="32" y="76" font-size="17" fill="#52657c">外部文本可以被分析，但不能自动升级为系统指令。</text>
+<path d="M292 230H368" stroke="#52657c" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M700 230H776" stroke="#52657c" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="32" y="130" width="260" height="210" rx="16" fill="#e9f7ee" stroke="#a9d8bc" stroke-width="2"/>
+<text x="162" y="174" text-anchor="middle" font-size="24" font-weight="700">System Prompt</text>
+<text x="162" y="216" text-anchor="middle" font-size="18">角色 / 目标 / 边界</text>
+<text x="162" y="256" text-anchor="middle" font-size="18">稳定规则</text>
+<text x="162" y="298" text-anchor="middle" font-size="17" fill="#205b3a">跨任务保持一致</text>
+<rect x="368" y="130" width="332" height="210" rx="16" fill="#fff4e9" stroke="#edc8ad" stroke-width="2"/>
+<text x="534" y="174" text-anchor="middle" font-size="24" font-weight="700">不可信数据区域</text>
+<text x="534" y="216" text-anchor="middle" font-size="18">用户输入 / 网页 / 文件</text>
+<text x="534" y="256" text-anchor="middle" font-size="18">仅用于分析，不是指令</text>
+<text x="534" y="298" text-anchor="middle" font-size="17" fill="#87431e">明确标记与分区</text>
+<rect x="776" y="130" width="292" height="210" rx="16" fill="#eef4ff" stroke="#c8d5e5" stroke-width="2"/>
+<text x="922" y="174" text-anchor="middle" font-size="24" font-weight="700">Harness</text>
+<text x="922" y="216" text-anchor="middle" font-size="18">权限 / 校验 / 人工确认</text>
+<text x="922" y="256" text-anchor="middle" font-size="18">拦截高风险动作</text>
+<text x="922" y="298" text-anchor="middle" font-size="17" fill="#52657c">模型失败也不能越界</text>
+<rect x="32" y="400" width="1036" height="92" rx="16" fill="#183153"/>
+<text x="550" y="438" text-anchor="middle" font-size="23" font-weight="700" fill="#ffffff">Prompt 约束倾向，Harness 约束能力</text>
+<text x="550" y="470" text-anchor="middle" font-size="17" fill="#e2ebfa">不要只靠提醒模型，也不要只靠关键词过滤</text>
+</g></svg>
